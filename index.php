@@ -13,6 +13,22 @@ BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto). -->
 <?php
 require_once __DIR__.'/Classes/Prodotto.php';
+require_once __DIR__.'/Classes/Cliente.php';
+
+$prodotto1 = new Prodotto('croccantini', 'gatto', 'lorem ipsum', 2);
+$prodotto2 = new Prodotto('bocconcini', 'gatto', 'lorem ipsum', 4);
+$prodotto3 = new Prodotto('pate', 'gatto', 'lorem ipsum', 3);
+$prodotto4 = new Prodotto('esca viva', 'iguana', 'lorem ipsum', 15);
+// var_dump($prodotto1);
+
+$cliente1 = new Cliente('Masamoto', 'Musashi', 'mamu@gmail.com', 1234567890123456, '07/03/2023','--');
+$cliente2 = new Cliente('Ryoma', 'Nagare', 'ryna@gmail.com', 1234561234567890, '03/07/2023', 'premium');
+// var_dump($cliente1);
+
+// var_dump($cliente1);
+// var_dump($cliente2);
+
+
 
 ?>
 
@@ -26,14 +42,14 @@ require_once __DIR__.'/Classes/Prodotto.php';
 </head>
 <body>
 <h1>Elenco Prodotti</h1>
-  <div>
-    <h2> <?php echo $prodotto1->getNome().' '.$proprietario1->getCognome()  ?> </h2>
+  <!-- <div>
+    <h2>  echo $prodotto1->getNome().' '.$proprietario1->getCognome()  ?> </h2>
     <ul>
-    <?php foreach($proprietario1->getAppartamenti() as $appartamenti){  ?>
-      <li> <?php echo $appartamenti->getNome().' € '.$appartamenti->getPrezzo().' ' ?> </li>
-    <?php } ?>
+     foreach($proprietario1->getAppartamenti() as $appartamenti){  ?>
+      <li>  echo $appartamenti->getNome().' € '.$appartamenti->getPrezzo().' ' ?> </li>
+     } ?>
     </ul>
-  </div>
+  </div> -->
   
 </body>
 </html>
