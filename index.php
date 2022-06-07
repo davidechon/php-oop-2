@@ -13,20 +13,26 @@ BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto). -->
 <?php
 require_once __DIR__.'/Classes/Prodotto.php';
-require_once __DIR__.'/Classes/Cliente.php';
 
-$prodotto1 = new Prodotto('croccantini', 'gatto', 'lorem ipsum', 2);
-$prodotto2 = new Prodotto('bocconcini', 'gatto', 'lorem ipsum', 4);
-$prodotto3 = new Prodotto('pate', 'gatto', 'lorem ipsum', 3);
-$prodotto4 = new Prodotto('esca viva', 'iguana', 'lorem ipsum', 15);
-// var_dump($prodotto1);
+$prodotto1 = new Prodotto('croccantini', 'gatto', 2.80);
+$prodotto2 = new Prodotto('bocconcini', 'cane', 1.20);
+$prodotto3 = new Prodotto('semi misti', 'roditori', 3.5);
+$prodotto4 = new Prodotto('esca viva', 'volatili', 15);
+var_dump($prodotto1);
+var_dump($prodotto2);
+var_dump($prodotto3);
+var_dump($prodotto4);
 
-$cliente1 = new Cliente('Masamoto', 'Musashi', 'mamu@gmail.com', 1234567890123456, '07/03/2023','--');
-$cliente2 = new Cliente('Ryoma', 'Nagare', 'ryna@gmail.com', 1234561234567890, '03/07/2023', 'premium');
+
+
+// $cliente1 = new Cliente('Masamoto', 'Musashi', 'mamu@gmail.com', 1234567890123456, '07/03/2023','--');
+// $cliente2 = new Cliente('Ryoma', 'Nagare', 'ryna@gmail.com', 1234561234567890, '03/07/2023', 'premium');
 // var_dump($cliente1);
 
-// var_dump($cliente1);
-// var_dump($cliente2);
+// $scontrino1 = new Scontrino('bocconcini', 'gatto', 'lorem ipsum', 4);
+// $scontrino2 = new Scontrino('croccantini', 'gatto', 'lorem ipsum', 2);
+// var_dump($scontrino1);
+// var_dump($scontrino2);
 
 
 
@@ -42,14 +48,14 @@ $cliente2 = new Cliente('Ryoma', 'Nagare', 'ryna@gmail.com', 1234561234567890, '
 </head>
 <body>
 <h1>Elenco Prodotti</h1>
-  <!-- <div>
-    <h2>  echo $prodotto1->getNome().' '.$proprietario1->getCognome()  ?> </h2>
+  <div>
+  <!-- <h2> <?php echo $prodotto->getNome().' '.$proprietario1->getCognome()  ?> </h2> -->
     <ul>
-     foreach($proprietario1->getAppartamenti() as $appartamenti){  ?>
-      <li>  echo $appartamenti->getNome().' € '.$appartamenti->getPrezzo().' ' ?> </li>
-     } ?>
+    <?php foreach($prodotto1->getProdotti() as $value){  ?>
+      <li> <?php echo $value->getNome().' € '.$value->getPrezzo().' ' ?> </li>
+    <?php } ?>
     </ul>
-  </div> -->
+  </div>
   
 </body>
 </html>
